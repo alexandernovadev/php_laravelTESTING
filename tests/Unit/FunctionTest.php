@@ -11,8 +11,13 @@ class FunctionTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testEmail()
     {
-        $this->assertTrue(true);
+
+        $result = validate_email("i@mail.com");
+        $this->assertTrue($result);
+
+        $result = validate_email("i@@mail.com");
+        $this->assertFalse($result);
     }
 }
